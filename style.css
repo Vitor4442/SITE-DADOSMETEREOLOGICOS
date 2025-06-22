@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 :root {
   --transition: all 0.3s ease;
   --ff: "Cairo", sans-serif;
@@ -7,16 +13,36 @@
 }
 
 /**** Navbar ****/
+.navbar {
+  padding: 0; 
+  width: 100%;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.navbar-brand {
+  margin-left: 15px; /* Espaço para o brand */
+}
+
 .navbar.navbar-expand-lg.bg-body-tertiary {
   background-color: var(--colorsite) !important;
     height: 80px; /* ou qualquer valor que desejar */
     min-height: 80px; /* garante que não ficará menor que isso */
+    width: 100%;
 }
 .navbar.navbar-expand-lg.bg-body-tertiary a {
   color: white !important; 
   padding: 1rem 1.5rem !important; /* aumenta o padding dos links */
   font-size: 1.2rem !important; /* opcional: aumenta o tamanho da fonte */
 }
+
+
 
 /**** Container ****/
 .container {
@@ -164,34 +190,17 @@ section{
   margin-bottom: 1.6rem;
 }
 
-/* Responsividade */
-
-@media screen and (min-width: 960px){
-  .container{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (min-width: 1170px) {
-  .container{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media screen and (min-width: 960px){
-  .city-select{
-    grid-column: 1 / -1;
-  }
-}
-
 /*footer*/
 /* ===== FOOTER ===== */
 footer {
   background-color: var(--colorsite);
   color: white;
-  padding: 3rem 1.6rem;
+  padding: 3rem 0rem;
   box-shadow: var(--shadow-card);
   font-family: var(--ff);
   margin-top: 3rem;
+  width: 100%; /* Garante que ocupa toda a largura */
+   
 }
 
 .footer-container {
@@ -245,14 +254,36 @@ footer {
   font-size: 1.5rem;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
+.data-box_body {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+.data-box_body canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+@media (min-width: 768px) {
+  .data-box_body {
+    min-height: 400px;
   }
   
-  .footer-column {
-    margin-bottom: 1.5rem;
+  .data-box_body canvas {
+    height: 400px !important;
+  }
+}
+
+.data-box_body canvas {
+  min-width: 700px; /* Largura mínima */
+  height: 300px !important;
+}
+
+/* Para telas maiores */
+@media (min-width: 768px) {
+  .data-box_body canvas {
+    height: 400px !important;
   }
 }
 
